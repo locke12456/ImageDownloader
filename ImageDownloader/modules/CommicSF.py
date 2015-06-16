@@ -38,12 +38,12 @@ class CommicSF(CommicBase):
 
     def _download_to(self, host, to_path):
         completed = False
-        socket.setdefaulttimeout(10)
         for pic_url in self.__pic_list__:
             url =  host +"/"+ pic_url
             file = re.findall(self.num_of_book+self.__filename_patterns__ , pic_url)[0]
             file =  to_path + file
             try : 
+                socket.setdefaulttimeout(10)
                 urllib.urlretrieve(url , file)
             except Exception:
                 return False
