@@ -1,27 +1,36 @@
 from DownloadBase import DownloadBase
 from ComicBase import ComicBase , urllib
-from modules.ComicSF import ComicSF
 import re
-class DownloadSF(DownloadBase):
+from modules.Comic99 import Comic99
+class Download99(DownloadBase):
     """description of class"""
     __search_all__ ="(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))"
-    __host_patterns__ = __search_all__+"+/"
-
-    __url__ = "comic.sfacg.com/"
+    __host_patterns__ = "comics/"+__search_all__+"+/"
+    __name_patterns__ = '[0-9]'
+    __url__ = "www.99comic.com/"
 
     __book_list__ = []
     __url_list__ = []
 
     def __init__(self, url, *args, **kwargs):
-        super(DownloadSF, self).__init__(url, *args, **kwargs)
+        super(Download99, self).__init__(url, *args, **kwargs)
         self.__parse__(url)
 
     def __build_book_list__(self, base, html, url):
-        list = re.findall(base + self.__host_patterns__ , html)
+        list = re.findall( self.__host_patterns__ , html)
+
         for tag in list:
-            temp = tag.split(base)[1].split("/")
-            self.__url_list__.append(url+temp[0])
-            sf = ComicSF(url+temp[0] , temp[0])
+            temp = "http://"+self.__url__+tag
+            self.__url_list__.append(temp)
+            try:
+                name = html.split(tag)[1].split("</a>")[0].split("'>")[1]
+            except Exception:
+                continue
+            num_list = re.findall(self.__name_patterns__ , name)
+            num = ""
+            for _ in num_list:
+                num += _
+            sf = Comic99( temp , num)
             self.__book_list__.append(sf)
 
     def __parse__( self , url ):
