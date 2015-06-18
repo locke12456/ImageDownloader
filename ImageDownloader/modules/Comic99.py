@@ -11,12 +11,11 @@ class Comic99(ComicBase):
     __base_url__ = ""
     __pic_list__ = []    
     __host_list__ = ["http://99.1112223333.com/dm"]
-    url = ""
-    num_of_book = ""
+
     def __init__(self,  url , nob , *args, **kwargs):
        super(Comic99, self).__init__(url, *args, **kwargs)
-       self.url = url
-       self.num_of_book = nob
+       self.URL = url
+       self.Name = nob
     def __parse__(self , url , num_of_book ):
         page = urllib.urlopen(url)
         html = page.read()
@@ -30,11 +29,11 @@ class Comic99(ComicBase):
 
 
     def Download(self, to_path):
-        self.__parse__(self.url , self.num_of_book )
+        self.__parse__(self.__url__ , self.Name )
         for host in self.__host_list__:
             completed = False
             host += self.__base_url__
-            directory =  to_path + self.num_of_book
+            directory =  to_path + self.Name
             if not os.path.exists(directory):
                 os.makedirs(directory , 755)
             completed = self._download_to(host, to_path)

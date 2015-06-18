@@ -19,9 +19,11 @@ class DownloadSF(DownloadBase):
     def __build_book_list__(self, base, html, url):
         list = re.findall(base + self.__host_patterns__ , html)
         for tag in list:
-            temp = tag.split(base)[1].split("/")
-            self.__url_list__.append(url+temp[0])
-            sf = ComicSF(url+temp[0] , temp[0])
+            sect = tag.split(base)
+            temp = sect[1].split("/")
+            tempurl = url+sect[1]
+            self.__url_list__.append(tempurl)
+            sf = ComicSF(tempurl , temp[0])
             self.__book_list__.append(sf)
 
     def __parse__( self , url ):

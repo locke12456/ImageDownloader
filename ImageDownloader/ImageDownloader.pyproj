@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>17545e8d-3137-4516-b062-18505ae340f4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>test\testDownloadSF.py</StartupFile>
+    <StartupFile>ImageDownloader.py</StartupFile>
     <SearchPath>.</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -24,11 +24,29 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DownloadBase.py">
+    <Compile Include="GuiItems\DownloadItemBase.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GuiItems\SectionItem.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GuiItems\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="modules\Comic99.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="modules\Download99.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="modules\IComic.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="modules\DownloadBase.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ImageDownloader.py" />
-    <Compile Include="modules\CommicSF.py">
+    <Compile Include="modules\ComicSF.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="modules\DownloadSF.py">
@@ -37,16 +55,25 @@
     <Compile Include="modules\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CommicBase.py">
+    <Compile Include="modules\ComicBase.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test\testDownload99.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="test\testDownloadSF.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ui\Ui_ImageDownloader.py" />
+    <Compile Include="ui\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="GuiItems\" />
     <Folder Include="modules\" />
     <Folder Include="test\" />
+    <Folder Include="ui\" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\2.7" />
