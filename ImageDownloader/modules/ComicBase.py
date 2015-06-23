@@ -10,8 +10,36 @@ class ComicBase(IComic):
     __pic_list__ = []    
     __host_list__ = []
     __retry__ = 1
+    
+
+### properties
+
+    __name__ = ""
+    __url__ =""
+    __tag__ =""
+    
+    @property 
+    def Tag(self):
+        return self.__tag__
+    @Tag.setter
+    def Tag(self,value):
+        self.__tag__ = value
+    @property 
+    def Name(self):
+        return self.__name__
+    @Name.setter
+    def Name(self,value):
+        self.__name__ = value    
+    @property 
+    def URL(self):
+        return self.__url__
+    @URL.setter
+    def URL(self,value):
+        self.__url__ = value
     def __init__(self, url , *args, **kwargs):
         return super(ComicBase, self).__init__(*args, **kwargs)
+
+
     
     def _download_file(self, file, url):
         retry = self.__retry__

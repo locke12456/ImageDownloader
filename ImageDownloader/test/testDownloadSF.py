@@ -8,6 +8,7 @@ class Test_testDownloadSF(unittest.TestCase):
             print comic.Name + " : " + comic.URL
 
     def test_Download(self):
+        
         sf = DownloadSF("http://comic.sfacg.com/HTML/HSWYC/") 
         Comic = sf.List()[0]
         completed = Comic.Download("./")

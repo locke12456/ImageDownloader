@@ -5,6 +5,7 @@ from PyQt4.QtCore import Qt
 from PyQt4.QtGui import QTreeWidgetItem, QDialogButtonBox
 from GuiItems.DownloadItemBase import DownloadItemBase
 from modules.DownloadSF import DownloadSF
+from modules.Download99 import Download99
 
 
 class ImageDownloader(QtGui.QMainWindow, Ui_ImageDownloader):
@@ -21,11 +22,11 @@ class ImageDownloader(QtGui.QMainWindow, Ui_ImageDownloader):
    def call(self):
         item = DownloadItemBase(self.TreeView_ComicLists)
         item.setText(0, "comic")
-        sf = DownloadSF(str(self.LineText_ComicUrl.text())) 
+        sf = Download99(str(self.LineText_ComicUrl.text())) 
         ComicList = sf.List()
         for comic in ComicList:
             item2 = DownloadItemBase(item)
-            item2.setText(0,  comic.Name )
+            item2.setText(0,  comic.Tag )
             item.addChild(item2)
             print comic.Name + " : " + comic.URL
         self.TreeView_ComicLists.addTopLevelItem(item)
