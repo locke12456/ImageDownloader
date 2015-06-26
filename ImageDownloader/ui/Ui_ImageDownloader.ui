@@ -30,9 +30,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>20</y>
       <width>801</width>
-      <height>561</height>
+      <height>541</height>
      </rect>
     </property>
     <property name="maximumSize">
@@ -41,68 +41,87 @@
       <height>561</height>
      </size>
     </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
       <string>Tab 1</string>
      </attribute>
-     <widget class="QLineEdit" name="LineText_ComicUrl">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>40</y>
-        <width>551</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Label_Url">
+     <widget class="QFrame" name="frame">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>40</y>
-        <width>71</width>
-        <height>20</height>
+        <y>0</y>
+        <width>801</width>
+        <height>471</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
-      <property name="text">
-       <string>Comic Url</string>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QDialogButtonBox" name="buttonBox">
-      <property name="geometry">
-       <rect>
-        <x>640</x>
-        <y>40</y>
-        <width>156</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="standardButtons">
-       <set>QDialogButtonBox::Ok|QDialogButtonBox::Reset</set>
-      </property>
-     </widget>
-     <widget class="QTreeWidget" name="TreeView_ComicLists">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>70</y>
-        <width>791</width>
-        <height>421</height>
-       </rect>
-      </property>
-      <column>
-       <property name="text">
-        <string notr="true">1</string>
+      <widget class="QTreeWidget" name="TreeView_ComicLists">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>40</y>
+         <width>791</width>
+         <height>421</height>
+        </rect>
        </property>
-      </column>
+       <column>
+        <property name="text">
+         <string notr="true">1</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="geometry">
+        <rect>
+         <x>630</x>
+         <y>10</y>
+         <width>156</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Ok|QDialogButtonBox::Reset</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="LineText_ComicUrl">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>10</y>
+         <width>541</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Label_Url">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Comic Url</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
@@ -112,6 +131,7 @@
     </widget>
    </widget>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -122,8 +142,26 @@
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNewTask"/>
+  </widget>
+  <action name="actionNewTask">
+   <property name="text">
+    <string>NewTask</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="res/main.qrc"/>
+ </resources>
  <connections/>
 </ui>

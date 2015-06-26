@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>17545e8d-3137-4516-b062-18505ae340f4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ImageDownloader.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>.</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -31,6 +31,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GuiItems\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="main.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="modules\Comic99.py">

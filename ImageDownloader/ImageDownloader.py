@@ -21,8 +21,8 @@ class ImageDownloader(QtGui.QMainWindow, Ui_ImageDownloader):
        #item.addChild(item2)
    def call(self):
         item = DownloadItemBase(self.TreeView_ComicLists)
-        item.setText(0, "comic")
-        sf = Download99(str(self.LineText_ComicUrl.text())) 
+        sf = DownloadSF(str(self.LineText_ComicUrl.text())) 
+        item.setText(0, sf.Name)
         ComicList = sf.List()
         for comic in ComicList:
             item2 = DownloadItemBase(item)
@@ -31,8 +31,3 @@ class ImageDownloader(QtGui.QMainWindow, Ui_ImageDownloader):
             print comic.Name + " : " + comic.URL
         self.TreeView_ComicLists.addTopLevelItem(item)
 
-if __name__ == '__main__':
-    app = QtGui.QApplication(sys.argv)
-    myapp = ImageDownloader()
-    myapp.show()
-    sys.exit(app.exec_())
