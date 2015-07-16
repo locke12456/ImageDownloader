@@ -22,3 +22,4 @@ class DownloadItemBase(QTreeWidgetItem):
     @State.setter 
     def State(self,value):
         self.__state__ = value
+    

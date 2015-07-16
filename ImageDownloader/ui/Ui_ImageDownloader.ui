@@ -72,6 +72,9 @@
          <height>421</height>
         </rect>
        </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::CustomContextMenu</enum>
+       </property>
        <column>
         <property name="text">
          <string notr="true">1</string>
@@ -127,7 +130,7 @@
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>true</bool>
+    <bool>false</bool>
    </attribute>
    <addaction name="actionNewTask"/>
   </widget>
@@ -175,6 +178,26 @@
    </property>
    <property name="text">
     <string>Options</string>
+   </property>
+  </action>
+  <action name="actionUnselecet_All">
+   <property name="text">
+    <string>Unselecet All</string>
+   </property>
+  </action>
+  <action name="actionSelecet_All">
+   <property name="text">
+    <string>Selecet All</string>
+   </property>
+  </action>
+  <action name="actionDownload">
+   <property name="text">
+    <string>Download</string>
+   </property>
+  </action>
+  <action name="actionCancel">
+   <property name="text">
+    <string>Cancel</string>
    </property>
   </action>
  </widget>
