@@ -1,4 +1,4 @@
-from DownloadBase import DownloadBase
+﻿from DownloadBase import DownloadBase
 from ComicBase import ComicBase , urllib
 import re
 from modules.Comic99 import Comic99
