@@ -1,6 +1,6 @@
 from DownloadBase import DownloadBase
 from ComicBase import ComicBase , urllib
-from modules.ComicSF import ComicSF
+from plugins.ComicSF import ComicSF
 import re
 from html2text import html2text
 class DownloadSF(DownloadBase):

@@ -1,4 +1,4 @@
-class IComic(object):
+﻿class IComic(object):
     """description of class"""
 
     def Download(self , to_path ):

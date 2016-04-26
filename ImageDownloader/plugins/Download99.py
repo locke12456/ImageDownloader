@@ -1,7 +1,7 @@
 ﻿from DownloadBase import DownloadBase
 from ComicBase import ComicBase , urllib
 import re
-from modules.Comic99 import Comic99
+from plugins.Comic99 import Comic99
 from html2text import html2text
 class Download99(DownloadBase):
     """description of class"""
@@ -11,6 +11,7 @@ class Download99(DownloadBase):
     __name_patterns__ = '(?:[0-9])'
     __sect_patterns__ = __search_all__+"+/"
     __url__ = "www.99comic.com/"
+    __base_url__ = "www.99comic.com/"
 
     __book_list__ = []
     __url_list__ = []
@@ -21,7 +22,7 @@ class Download99(DownloadBase):
 
     def _build_comices(self, list):
         for tag in list:
-            temp = "http://"+self.__url__+tag[1]
+            temp = "http://"+self.__base_url__+tag[1]
             self.__url_list__.append(temp)
             try:
                 name = re.findall(self.__name_patterns__ , tag[0])

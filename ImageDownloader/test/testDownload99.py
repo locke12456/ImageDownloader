@@ -1,6 +1,6 @@
 ﻿import unittest
-from modules.Comic99 import Comic99
-from modules.Download99 import Download99
+from plugins.Comic99 import Comic99
+from plugins.Download99 import Download99
 
 class Test_testDownload99(unittest.TestCase):
     def test_testDownload99(self):

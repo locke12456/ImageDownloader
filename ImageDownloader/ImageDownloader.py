@@ -1,12 +1,12 @@
-from ui.Ui_ImageDownloader import Ui_ImageDownloader
+﻿from ui.Ui_ImageDownloader import Ui_ImageDownloader
 import sys
 from PyQt4 import QtGui
 from PyQt4 import QtCore
 from PyQt4.QtCore import Qt
 from PyQt4.QtGui import QTreeWidgetItem, QDialogButtonBox
 from GuiItems.DownloadItemBase import DownloadItemBase
-from modules.DownloadSF import DownloadSF
-from modules.Download99 import Download99
+from plugins.DownloadSF import DownloadSF
+from plugins.Download99 import Download99
 
 
 class ImageDownloader(QtGui.QMainWindow, Ui_ImageDownloader):

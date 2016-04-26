@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>17545e8d-3137-4516-b062-18505ae340f4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>main.py</StartupFile>
+    <StartupFile>test\testDownloadSF.py</StartupFile>
     <SearchPath>.</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -24,6 +24,15 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="commands.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="commands\detector.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="commands\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GuiItems\DownloadItemBase.py">
       <SubType>Code</SubType>
     </Compile>
@@ -36,31 +45,15 @@
     <Compile Include="main.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="modules\Comic99.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="modules\Download99.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="modules\IComic.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="modules\DownloadBase.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ImageDownloader.py" />
-    <Compile Include="modules\ComicSF.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="modules\DownloadSF.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="modules\__init__.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="modules\ComicBase.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="plugins\Comic99.py" />
+    <Compile Include="plugins\ComicBase.py" />
+    <Compile Include="plugins\ComicSF.py" />
+    <Compile Include="plugins\Download99.py" />
+    <Compile Include="plugins\DownloadBase.py" />
+    <Compile Include="plugins\DownloadSF.py" />
+    <Compile Include="plugins\IComic.py" />
+    <Compile Include="plugins\__init__.py" />
     <Compile Include="test\testDownload99.py">
       <SubType>Code</SubType>
     </Compile>
@@ -73,8 +66,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="commands\" />
     <Folder Include="GuiItems\" />
-    <Folder Include="modules\" />
+    <Folder Include="plugins\" />
     <Folder Include="test\" />
     <Folder Include="ui\" />
   </ItemGroup>

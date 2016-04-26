@@ -1,5 +1,5 @@
-import unittest
-from modules.DownloadSF import DownloadSF
+﻿import unittest
+from plugins.DownloadSF import DownloadSF
 class Test_testDownloadSF(unittest.TestCase):
     def test_List(self):
         sf = DownloadSF("http://comic.sfacg.com/HTML/HSWYC/") 
@@ -9,8 +9,8 @@ class Test_testDownloadSF(unittest.TestCase):
 
     def test_Download(self):
         
-        sf = DownloadSF("http://comic.sfacg.com/HTML/HSWYC/") 
-        Comic = sf.List()[0]
+        sf = DownloadSF("http://comic.sfacg.com/HTML/xinsjfyzs/") 
+        Comic = sf.List()[5]
         completed = Comic.Download("./")
         self.assertEqual(completed , True)
         

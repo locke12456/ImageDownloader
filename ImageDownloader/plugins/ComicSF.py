@@ -1,4 +1,4 @@
-import urllib , re , os
+﻿import urllib , re , os
 import socket
 from ComicBase import ComicBase
 
@@ -7,7 +7,8 @@ class ComicSF(ComicBase):
     __search_all__ ="(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))"
     __host_patterns__ = "http[s]?://"+__search_all__+"+"
     __pic_patterns__ = "Pic/"+__search_all__+"+.png"
-    __filename_patterns__ = "/"+__search_all__+"+.png"
+    __jpg_patterns__ = "Pic/"+__search_all__+"+.JPG"
+    __filename_patterns__ = "/"+__search_all__+"+.JPG"
     __js_patterns__ = "/Utility/"+__search_all__+"+"
     __base_url__ = "http://comic.sfacg.com/"
     __pic_list__ = []    
@@ -32,7 +33,7 @@ class ComicSF(ComicBase):
         js_file = page.read()
         page.close()
         self.__host_list__ = re.findall(self.__host_patterns__ , js_file)
-        self.__pic_list__ = re.findall(self.__pic_patterns__ , js_file)
+        self.__pic_list__ = re.findall(self.__jpg_patterns__ , js_file)
 
 
 

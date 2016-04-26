@@ -1,5 +1,5 @@
-import urllib , re , socket , os
-from modules.IComic import IComic
+﻿import urllib , re , socket , os
+from plugins.IComic import IComic
 class ComicBase(IComic):
     """description of class"""
     __search_all__ ="(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))"
