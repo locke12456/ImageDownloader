@@ -17,7 +17,12 @@ class ComicBase(IComic):
     __name__ = ""
     __url__ =""
     __tag__ =""
-    
+    __class_name__ = "ComicBase"
+
+    @classmethod
+    def __register__(self , classname):
+        return classname == self.__class_name__
+
     @property 
     def Tag(self):
         return self.__tag__

@@ -13,6 +13,12 @@ class DownloadSF(DownloadBase):
 
     __book_list__ = []
     __url_list__ = []
+    
+    __class_name__ = "DownloadSF"
+
+    @classmethod
+    def __register__(self , classname):
+        return classname == self.__class_name__
 
     def __init__(self, url, *args, **kwargs):
         super(DownloadSF, self).__init__(url, *args, **kwargs)

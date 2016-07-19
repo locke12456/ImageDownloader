@@ -1,4 +1,6 @@
 import os , glob , re
+from plugins.ComicBase import ComicBase
+from plugins.DownloadBase import DownloadBase
 class PluginLoader(object):
     """description of class"""
     _plugins = None    
@@ -22,5 +24,8 @@ class PluginLoader(object):
                     plugin = str(find_result[0]).replace( ".py" , "" )
                     modules[f].append(plugin) 
                     modules_name.append("plugins."+plugin)
-        _plugins = map( __import__ , modules_name)
+        self._plugins = map( __import__ , modules_name )
+        print DownloadBase.__subclasses__()
+        print ComicBase.__subclasses__()
+
 

@@ -15,6 +15,12 @@ class Download99(DownloadBase):
 
     __book_list__ = []
     __url_list__ = []
+    
+    __class_name__ = "Download99"
+
+    @classmethod
+    def __register__(self , classname):
+        return classname == self.__class_name__
 
     def __init__(self, url, *args, **kwargs):
         super(Download99, self).__init__(url, *args, **kwargs)

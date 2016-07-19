@@ -13,6 +13,13 @@ class ComicSF(ComicBase):
     __base_url__ = "http://comic.sfacg.com/"
     __pic_list__ = []    
     __host_list__ = []
+    
+    __class_name__ = "ComicSF"
+
+    @classmethod
+    def __register__(self , classname):
+        return classname == self.__class_name__
+
     def __init__(self,  url , nob , *args, **kwargs):
        super(ComicSF, self).__init__(url, *args, **kwargs)
        self.URL = url

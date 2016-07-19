@@ -11,6 +11,13 @@ class Comic99(ComicBase):
     __base_url__ = ""
     __pic_list__ = []    
     __host_list__ = ["http://99.1112223333.com/dm"]
+    
+    __class_name__ = "Comic99"
+
+    @classmethod
+    def __register__(self , classname):
+        return classname == self.__class_name__
+
 
     def __init__(self,  url , nob , *args, **kwargs):
        super(Comic99, self).__init__(url, *args, **kwargs)
